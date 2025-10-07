@@ -3,66 +3,66 @@
 <meta name="apple-mobile-web-app-title" content="Check dein Fahrzeug">
 <!doctype html>
 <html lang="de">
-<head>
+<Kopf>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Fahrzeugkontrolle – Schwerlast (GitHub Pages)</title>
-<meta name="color-scheme" content="light">
-<!-- Eingebettetes App-Icon (Data-URL) -->
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128' viewBox='0 0 128 128'%3E%3Crect width='128' height='128' rx='24' ry='24' fill='%230076BC'/%3E%3Crect x='20' y='20' width='88' height='88' rx='18' ry='18' fill='none' stroke='white' stroke-width='6'/%3E%3Cpath d='M36 66 L58 86 L94 42' fill='none' stroke='white' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-<style>
+<meta name="viewport" content="width=Gerätebreite,Anfangsmaßstab=1">
+<title>Fahrzeugkontrolle – Schwerlast (GitHub-Seiten)</title>
+<meta name="Farbschema" content="hell">
+<!-- Eingebettetes App-Icon (Daten-URL) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' Breite='128' Höhe='128' Ansichtsfeld='0 0 128 128'%3E%3Crect Breite='128' Höhe='128' rx='24' ry='24' Füllung='%230076BC'/%3E%3Crect x='20' y='20' Breite='88' Höhe='88' rx='18' ry='18' Füllung='keine' Strich='weiß' Strichbreite='6'/%3E%3Cpath d='M36 66 L58 86 L94 42' Füllung='keine' Strich='weiß' Strichbreite='10' Strichlinienende='rund' Strichlinienverbindung='rund'/%3E%3C/svg%3E">
+<Stil>
   :root{--b:#e2e8f0;--mut:#64748b;--ok:#059669;--warn:#d97706;--bad:#dc2626}
-  *{box-sizing:border-box}
+  *{Boxgröße:Rahmenbox}
   body{margin:0;font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#f8fafc;color:#0f172a}
-  header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--b);z-index:5}
+  Header {Position: klebrig; oben: 0; Hintergrund: #fff; Rand unten: 1px durchgezogen var (--b); Z-Index: 5}
   .wrap{max-width:980px;margin:0 auto;padding:14px}
-  h1{margin:0;font-size:20px} h2{margin:0 0 10px;font-size:18px}
-  section{background:#fff;border:1px solid var(--b);border-radius:12px;padding:14px;margin:12px 0}
+  h1{Rand:0;Schriftgröße:20px} h2{Rand:0 0 10px;Schriftgröße:18px}
+  Abschnitt {Hintergrund: #fff; Rand: 1px durchgezogen var (--b); Randradius: 12px; Polsterung: 14px; Rand: 12px 0}
   .grid{display:grid;gap:10px}
   @media(min-width:720px){.grid-2{grid-template-columns:1fr 1fr}}
-  label span{font-size:14px;font-weight:600}
-  input,textarea{width:100%;padding:12px;border:1px solid var(--b);border-radius:10px;font:inherit}
-  textarea{min-height:56px;resize:vertical}
-  .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  Beschriftungsspanne {Schriftgröße: 14px; Schriftgewicht: 600}
+  Eingabe, Textbereich {Breite: 100 %; Polsterung: 12 Pixel; Rand: 1 Pixel, durchgehend var (--b); Randradius: 10 Pixel; Schriftart: erben}
+  Textbereich {min-height:56px;resize:vertical}
+  .row{Anzeige:flex;Lücke:10px;Elemente ausrichten:Mitte;flex-Wrap:Wrap}
   .btn{padding:10px 14px;border:1px solid var(--b);background:#fff;border-radius:10px;cursor:pointer;font-weight:600}
-  .btn:hover{background:#f1f5f9}
-  .btn.ok.active{background:var(--ok);color:#fff}
-  .btn.warn.active{background:var(--warn);color:#fff}
-  .btn.bad.active{background:var(--bad);color:#fff}
-  .chip{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;border:1px solid var(--b);background:#eef2ff}
+  .btn:hover{Hintergrund:#f1f5f9}
+  .btn.ok.active{Hintergrund:var(--ok);Farbe:#fff}
+  .btn.warn.active{Hintergrund:var(--warn);Farbe:#fff}
+  .btn.bad.active{Hintergrund:var(--bad);Farbe:#fff}
+  .chip{Anzeige: Inline-Block;Padding: 2px 8px;Rahmenradius: 999px;Schriftgröße: 12px;Rahmen: 1px durchgezogen var(--b);Hintergrund:#eef2ff}
   .card{border:1px solid var(--b);border-radius:10px;padding:10px}
   .status{font-size:14px;color:#64748b}
-  .photos{display:flex;gap:8px;overflow:auto}
-  .ph{position:relative;width:92px;height:92px;border:1px solid var(--b);border-radius:8px;overflow:hidden;background:#f8fafc}
-  .ph img{width:100%;height:100%;object-fit:cover}
-  .x{position:absolute;right:4px;top:4px;width:22px;height:22px;border-radius:11px;border:1px solid var(--b);background:#fff;cursor:pointer;line-height:20px;text-align:center;font-size:14px}
-  footer{position:sticky;bottom:0;background:#fff;border-top:1px solid var(--b)}
+  .Fotos{Anzeige:flex;Lücke:8px;Überlauf:auto}
+  .ph{position:relative;Breite:92px;Höhe:92px;Rahmen:1px solid var(--b);Rahmenradius:8px;Überlauf:versteckt;Hintergrund:#f8fafc}
+  .ph img{Breite:100%;Höhe:100%;Objektanpassung:Abdeckung}
+  .x{Position:absolut;rechts:4px;oben:4px;Breite:22px;Höhe:22px;Randradius:11px;Rand:1px solid var(--b);Hintergrund:#fff;Cursor:Zeiger;Zeilenhöhe:20px;Textausrichtung:zentriert;Schriftgröße:14px}
+  Fußzeile {Position: klebrig; unten: 0; Hintergrund: #fff; Rand oben: 1px durchgezogen var (--b)}
   .help{font-size:12px;color:#475569}
-</style>
-</head>
-<body>
-<header>
-  <div class="wrap row" style="justify-content:space-between">
+</Stil>
+</Kopf>
+<Text>
+<Kopfzeile>
+  <div class="Zeile umbrechen" style="Inhalt ausrichten:Abstand zwischen">
     <h1>Fahrzeugkontrolle – Schwerlast/Zugmaschine</h1>
-    <div class="row">
+    <div Klasse="Zeile">
       <button class="btn" id="btnGeo">GPS-Ort</button>
       <button class="btn" id="btnPdf">PDF speichern</button>
-      <button class="btn" id="btnMail">An Dispo (E-Mail + PDF)</button>
+      <button class="btn" id="btnMail">Ein Dispo (E-Mail + PDF)</button>
     </div>
   </div>
 </header>
 
-<main class="wrap">
-  <section>
+<Hauptklasse="Wrap">
+  <Abschnitt>
     <h2>Empfänger / Versand</h2>
     <div class="grid grid-2">
       <label><span>Dispo-E-Mail *</span><input id="inDispo" placeholder="dispo@firma.de"></label>
       <label><span>CC (optional)</span><input id="inCc" placeholder="du@firma.de"></label>
     </div>
     <p class="help">PDF wird per Google-Relay verschickt (anhängend). Die E-Mail-Adressen werden nur lokal gespeichert.</p>
-  </section>
+  </Abschnitt>
 
-  <section>
+  <Abschnitt>
     <h2>Fahrzeugdaten</h2>
     <div class="grid grid-2">
       <label><span>Datum/Uhrzeit</span><input id="inDate" type="datetime-local"></label>
@@ -72,34 +72,34 @@
       <label class="grid-col-span-2"><span>Ort</span><input id="inLoc" placeholder="automatisch per GPS oder manuell"></label>
     </div>
     <div class="status" id="geoOut" style="margin-top:6px"></div>
-  </section>
+  </Abschnitt>
 
-  <section>
+  <Abschnitt>
     <h2>Logo für Bericht (optional)</h2>
-    <div class="row">
+    <div Klasse="Zeile">
       <input type="file" id="inLogo" accept="image/*">
-      <span class="help">Einmal auswählen → wird klein gespeichert (PDF bleibt &lt; 200 kB).</span>
+      <span class="help">Einmal auswählen → wird klein gespeichert (PDF bleibt < 200 kB).</span>
     </div>
     <div id="logoInfo" class="status"></div>
-  </section>
+  </Abschnitt>
 
-  <section>
+  <Abschnitt>
     <h2>Checkliste (mit Fotos)</h2>
     <div id="checklist"></div>
     <p class="status">Fotos werden stark komprimiert.</p>
-  </section>
+  </Abschnitt>
 
-  <section>
+  <Abschnitt>
     <h2>Unterschrift</h2>
     <div class="card" style="overflow:hidden">
       <canvas id="sig" style="touch-action:none;width:100%;height:170px;"></canvas>
     </div>
-    <div class="row" style="margin-top:8px">
+    <div Klasse="Zeile" Stil="Rand oben:8px">
       <button class="btn" id="btnClearSig">Löschen</button>
       <button class="btn" id="btnSaveSig">Übernehmen</button>
       <span id="sigStatus" class="status" style="display:none;color:#047857">Gespeichert ✓</span>
     </div>
-  </section>
+  </Abschnitt>
 </main>
 
 <footer><div class="wrap"><div id="status" class="status">Bereit</div></div></footer>
@@ -107,33 +107,33 @@
 <!-- jsPDF -->
 <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
 
-<script>
-(function(){
+<Skript>
+(Funktion(){
   // >>>> HIER IST DEIN RELAY (funktioniert bereits) <<<<
   const RELAY_URL = 'https://script.google.com/macros/s/AKfycbzwp8iP9FUlFnddcz_ORZTXfqkeTnhz_k3kJxMU2AGZzXGSLylEe_g4uczH6FT-SxzPUg/exec';
 
   const { jsPDF } = window.jspdf;
-  const $ = s => document.querySelector(s);
+  const $ = s => Dokument.QuerySelector(s);
   const SKEY='fahrzeugkontrolle_pages_single';
   let state = JSON.parse(localStorage.getItem(SKEY) || '{}');
   state.res=state.res||{}; state.geo=state.geo||null; state.logo=state.logo||null; state.logoAspect=state.logoAspect||1;
 
-  const items = [
+  const Elemente = [
     {id:'h1', sec:'Hydraulik & Schläuche', title:'Hydraulik-Kupplungen verriegelt & dicht', req:1},
     {id:'h2', sec:'Hydraulik & Schläuche', title:'Schläuche ohne Scheuer-/Knickstellen', req:1},
     {id:'h3', sec:'Hydraulik & Schläuche', title:'Druck-/Funktionsprobe ohne Auffälligkeiten', req:1},
-    {id:'l1', sec:'Leckagen / Austritte',  title:'Kein Ölfilm an Verbindern/Flanschen', req:1},
-    {id:'l2', sec:'Leckagen / Austritte',  title:'Keine Tropfenbildung / keine Pfützen', req:1},
-    {id:'f1', sec:'Fahrzeug allgemein',    title:'Beleuchtung komplett i. O.', req:1},
-    {id:'f2', sec:'Fahrzeug allgemein',    title:'Reifen/Felgen i. O.', req:1},
-    {id:'f3', sec:'Fahrzeug allgemein',    title:'Bremsprobe bestanden', req:1},
-    {id:'f4', sec:'Fahrzeug allgemein',    title:'Ladungssicherung plausibel', req:1},
-    {id:'m1', sec:'Umweltschutz',          title:'Mobile Auffangmatten vorhanden & einsatzbereit', req:1}
+    {id:'l1', sec:'Leckagen / Austritte', title:'Kein Ölfilm an Verbindern/Flanschen', req:1},
+    {id:'l2', sec:'Leckagen / Austritte', title:'Keine Tropfenbildung / keine Pfützen', req:1},
+    {id:'f1', sec:'Fahrzeug allgemein', title:'Beleuchtung komplett i. O.', req:1},
+    {id:'f2', sec:'Fahrzeug allgemein', title:'Reifen/Felgen i. O.', req:1},
+    {id:'f3', sec:'Fahrzeug allgemein', title:'Bremsprobe bestanden', req:1},
+    {id:'f4', sec:'Fahrzeug allgemein', title:'Ladungssicherung plausibel', req:1},
+    {id:'m1', sec:'Umweltschutz', title:'Mobile Auffangmatten vorhanden & einsatzbereit', req:1}
   ];
 
-  // Init
+  // Initialisieren
   window.addEventListener('DOMContentLoaded', ()=>{
-    ['inDispo','inCc','inOp','inTr','inTl','inLoc'].forEach(id=>{ if(state[id]) $('#'+id).value=state[id]; });
+    ['inDispo','inCc','inOp','inTr','inTl','inLoc'].fürJeden(id=>{ if(state[id]) $('#'+id).value=state[id]; });
     $('#inDate').value = localDateTimeValue();
     ['inDispo','inCc','inOp','inTr','inTl','inLoc','inDate'].forEach(id=>$('#'+id).addEventListener('input', persist));
     if(state.logo) $('#logoInfo').textContent='Logo gespeichert';
@@ -141,40 +141,40 @@
     $('#btnGeo').onclick=onGeo; $('#btnPdf').onclick=onPdf; $('#btnMail').onclick=onMail; $('#inLogo').onchange=onLogoPick;
   });
 
-  function persist(){ ['inDispo','inCc','inOp','inTr','inTl','inLoc','inDate'].forEach(id=>state[id]=$('#'+id).value); localStorage.setItem(SKEY, JSON.stringify(state)); }
-  function setStatus(t){ $('#status').textContent=t; }
-  function localDateTimeValue(d=new Date()){ const p=n=>String(n).padStart(2,'0'); return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}T${p(d.getHours())}:${p(d.getMinutes())}`; }
+  Funktion persist(){ ['inDispo','inCc','inOp','inTr','inTl','inLoc','inDate'].fürJeden(id=>status[id]=$('#'+id).Wert); localStorage.setItem(SKEY, JSON.stringify(status)); }
+  Funktion setStatus(t){ $('#status').textContent=t; }
+  Funktion localDateTimeValue(d=neues Datum()){ const p=n=>String(n).padStart(2,'0'); return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}T${p(d.getHours())}:${p(d.getMinutes())}`; }
   const safeText=v=> (v===undefined||v===null) ? '' : String(v);
 
-  async function onGeo(){
-    if(!navigator.geolocation){ alert('Kein GPS verfügbar.'); return; }
+  asynchrone Funktion onGeo(){
+    if(!navigator.geolocation){ Alert('Kein GPS verfügbar.'); zurückkehren; }
     navigator.geolocation.getCurrentPosition(async pos=>{
       state.geo={lat:+pos.coords.latitude.toFixed(6), lon:+pos.coords.longitude.toFixed(6), acc:Math.round(pos.coords.accuracy)};
       $('#geoOut').textContent=`${state.geo.lat}, ${state.geo.lon} (±${state.geo.acc} m)`;
-      try{
+      versuchen{
         const url=`https://nominatim.openstreetmap.org/reverse?format=json&lat=${state.geo.lat}&lon=${state.geo.lon}&zoom=10&addressdetails=1`;
-        const r=await fetch(url,{headers:{'Accept':'application/json'}});
+        const r=await fetch(url,{headers:{'Akzeptieren':'application/json'}});
         const d=await r.json(); const a=d.address||{};
-        const place=a.city||a.town||a.village||a.municipality||a.county||'';
-        if(place) { $('#inLoc').value=place; persist(); }
-      }catch(_){}
-    }, err=> alert('GPS fehlgeschlagen: '+(err?.message||err)));
+        const place=eine.Stadt||eine.Gemeinde||ein.Dorf||eine.Gemeinde||ein.Landkreis||'';
+        if(Ort) { $('#inLoc').value=Ort; persist(); }
+      }fangen(_){}
+    }, err=> warning('GPS fehlgeschlagen: '+(err?.message||err)));
   }
 
-  async function onLogoPick(e){
+  asynchrone Funktion onLogoPick(e){
     const f=e.target.files && e.target.files[0]; if(!f) return;
-    const data = await compressImageFile(f, 320, 0.8);
-    const info = await probeImage(data);
+    const data = warte auf compressImageFile(f, 320, 0.8);
+    const info = warte auf ProbeImage(Daten);
     state.logo=data; state.logoAspect=info.w/info.h||1; $('#logoInfo').textContent=`Logo gespeichert (${info.w}×${info.h})`; persist();
   }
-  function probeImage(dataUrl){ return new Promise(res=>{ const i=new Image(); i.onload=()=>res({w:i.width,h:i.height}); i.src=dataUrl; }); }
+  Funktion probeImage(dataUrl){ return neues Promise(res=>{ const i=neues Bild(); i.onload=()=>res({w:i.Breite,h:i.Höhe}); i.src=dataUrl; }); }
 
-  function renderChecklist(){
-    const host=$('#checklist'); host.innerHTML='';
-    const groups=[...new Set(items.map(i=>i.sec))];
-    groups.forEach(sec=>{
+  Funktion renderChecklist(){
+    const host=$('#checkliste'); host.innerHTML='';
+    const groups=[...neues Set(items.map(i=>i.sec))];
+    Gruppen.fürJeden(sec=>{
       host.insertAdjacentHTML('beforeend', `<div style="font-weight:700;margin:6px 0">${sec}</div>`);
-      items.filter(i=>i.sec===sec).forEach(it=>{
+      Elemente.Filter(i=>i.sec===sec).forEach(it=>{
         const card=document.createElement('div'); card.className='card';
         card.innerHTML=`
           <div class="row" style="justify-content:space-between">
@@ -184,14 +184,14 @@
           <textarea placeholder="Bemerkung / Maßnahmen…"></textarea>
           <label style="display:block;margin-top:6px"><span style="font-size:14px;font-weight:600">Foto hinzufügen</span>
             <input type="file" accept="image/*" capture="environment" style="display:block;margin-top:6px"></label>
-          <div class="photos" id="ph_${it.id}"></div>
+          <div class="Fotos" id="ph_${it.id}"></div>
         `;
-        host.appendChild(card);
+        host.appendChild(Karte);
         if(!state.res[it.id]) state.res[it.id]={sev:'',note:'',photos:[]};
 
         const btns=card.querySelectorAll('button[data-sev]');
         const mark=v=>{ btns.forEach(b=>b.className='btn'); btns.forEach(b=>{ if(b.dataset.sev===v){ b.className+=' '+(v==='OK'?'ok':v==='Hinweis'?'warn':'bad')+' active'; } }); };
-        if(state.res[it.id].sev) mark(state.res[it.id].sev);
+        wenn(state.res[it.id].sev) mark(state.res[it.id].sev);
         btns.forEach(b=> b.onclick=()=>{ state.res[it.id].sev=b.dataset.sev; mark(b.dataset.sev); persist(); });
 
         const ta=card.querySelector('textarea'); ta.value=state.res[it.id].note||''; ta.oninput=()=>{ state.res[it.id].note=ta.value; persist(); };
@@ -201,11 +201,11 @@
           const url=await compressImageFile(f, 700, 0.42);
           state.res[it.id].photos.push(url); redrawPhotos(it.id); persist(); fi.value='';
         };
-        redrawPhotos(it.id);
+        neu zeichnenFotos(it.id);
       });
     });
   }
-  function redrawPhotos(id){
+  Funktion redrawPhotos(id){
     const bar=$('#ph_'+id); if(!bar) return; bar.innerHTML='';
     (state.res[id].photos||[]).forEach((p,idx)=>{
       const d=document.createElement('div'); d.className='ph';
@@ -215,109 +215,109 @@
     });
   }
 
-  function compressImageFile(file,maxDim=700,quality=0.42){
-    return new Promise((resolve,reject)=>{
-      const r=new FileReader();
-      r.onload=()=>{ const img=new Image(); img.onload=()=>{
-        const c=document.createElement('canvas'); let w=img.width,h=img.height; const s=Math.min(1,maxDim/Math.max(w,h));
+  Funktion compressImageFile(Datei,maxDim=700,Qualität=0.42){
+    returniere neues Promise((lösen,ablehnen)=>{
+      const r=neuer FileReader();
+      r.onload=()=>{ const img=neues Bild(); img.onload=()=>{
+        const c=document.createElement('canvas'); let w=Bildbreite,h=Bildhöhe; const s=Math.min(1,maxDim/Math.max(w,h));
         w=Math.round(w*s); h=Math.round(h*s); c.width=w; c.height=h; c.getContext('2d').drawImage(img,0,0,w,h);
-        resolve(c.toDataURL('image/jpeg',quality));
+        lösen (c.toDataURL ('image/jpeg', Qualität));
       }; img.src=r.result; };
-      r.onerror=reject; r.readAsDataURL(file);
+      r.onerror=Ablehnen; r.readAsDataURL(Datei);
     });
   }
 
-  function initSignature(){
+  Funktion initSignature(){
     const c=$('#sig'),ctx=c.getContext('2d');
-    size(); window.addEventListener('resize',size);
-    function size(){ const w=c.clientWidth,h=170,px=window.devicePixelRatio||1; c.style.width=w+'px'; c.style.height=h+'px'; c.width=Math.round(w*px); c.height=Math.round(h*px); ctx.setTransform(px,0,0,px,0,0); ctx.lineWidth=2; ctx.lineCap='round'; ctx.strokeStyle='#111827'; }
-    let down=false,last=null; const P=e=>{const r=c.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top}};
-    c.addEventListener('pointerdown',e=>{down=true; last=P(e);}); c.addEventListener('pointerup',()=>{down=false; last=null;}); c.addEventListener('pointerleave',()=>{down=false; last=null;});
-    c.addEventListener('pointermove',e=>{if(!down)return; const p=P(e); ctx.beginPath(); ctx.moveTo(last.x,last.y); ctx.lineTo(p.x,p.y); ctx.stroke(); last=p;});
+    Größe(); window.addEventListener('Größe ändern',Größe);
+    Funktion Größe () { const w = c.Clientbreite, h = 170, px = Fenster.Gerätepixelverhältnis || 1; c.Stil.Breite = w + 'px'; c.Stil.Höhe = h + 'px'; c.Breite = Math.round (w * px); c.Höhe = Math.round (h * px); ctx.setTransform (px, 0,0, px, 0,0); ctx.Linienbreite = 2; ctx.Linienkappe = 'rund'; ctx.StrokeStyle = '#111827'; }
+    runterlassen=false,last=null; const P=e=>{const r=c.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top}};
+    c.addEventListener('Zeiger nach unten',e=>{unten=wahr; letzte=P(e);}); c.addEventListener('Zeiger nach oben',()=>{unten=falsch; letzte=null;}); c.addEventListener('Zeiger nach links',()=>{unten=falsch; letzte=null;});
+    c.addEventListener('pointermove',e=>{if(!down)return; const p=P(e); ctx.beginPath(); ctx.moveTo(last.x,last.y); ctx.lineTo(px,py); ctx.stroke(); last=p;});
     $('#btnClearSig').onclick=()=>{ctx.clearRect(0,0,c.width,c.height); state.sig=''; $('#sigStatus').style.display='none'; persist(); };
     $('#btnSaveSig').onclick=()=>{ state.sig=c.toDataURL('image/jpeg',0.8); $('#sigStatus').style.display='inline'; persist(); };
   }
 
-  function buildPdf(){
+  Funktion buildPdf(){
     const doc=new jsPDF({unit:'pt',format:'a4'}); const m=40; let y=m; const lh=16;
     const line=(t='',bold=false)=>{ doc.setFont('helvetica',bold?'bold':'normal'); doc.text(safeText(t), m, y); y+=lh; if(y>800){doc.addPage(); y=m;} };
-    if(state.logo){ try{ const pageW=doc.internal.pageSize.getWidth(); const w=80, h=Math.round(w/(state.logoAspect||1)); const x=pageW-m-w; doc.addImage(state.logo,'JPEG',x,m-10,w,h); }catch(e){} }
+    if(state.logo){ try{ const pageW=doc.internal.pageSize.getWidth(); const w=80, h=Math.round(w/(state.logoAspect||1)); const x=pageW-mw; doc.addImage(state.logo,'JPEG',x,m-10,w,h); }catch(e){} }
     doc.setFontSize(14); line('Fahrzeugkontrolle – Schwerlast/Zugmaschine',true); doc.setFontSize(10);
     line('Datum/Uhrzeit: '+($('#inDate').value||'')); line('Fahrer/in: '+($('#inOp').value||'')); line('Zugmaschine: '+($('#inTr').value||'')); line('Auflieger/Modul: '+($('#inTl').value||'')); if($('#inLoc').value) line('Ort: '+($('#inLoc').value));
     if(state.geo) line('Geotag: '+(state.geo.lat+', '+state.geo.lon+' (±'+state.geo.acc+' m)')); line();
-    const anyBad=Object.values(state.res).some(r=>r.sev==='Mangel'); line('Freigabe: '+(anyBad?'NICHT ERTEILT (Mangel vorhanden)':'ERTEILT')); line();
-    line('Checkpunkte:',true); items.forEach(it=>{const r=state.res[it.id]||{}; line('- ['+(r.sev||'?')+'] '+it.title); if(r.note) line('   Notiz: '+r.note);});
-    line(); line('Digitale Unterschrift:',true);
+    const anyBad=Object.values(state.res).some(r=>r.sev==='Mangel'); line('Freigabe: '+(anyBad?'NICHT ERTEILT (Mangel vorhanden)':'ERTEILT')); Linie();
+    line('Checkpunkte:',true); items.forEach(it=>{const r=state.res[it.id]||{}; line('- ['+(r.sev||'?')+'] '+it.title); if(r.note) line(' Notiz: '+r.note);});
+    Linie(); line('Digitale Unterschrift:',true);
     if(state.sig){ try{ doc.addImage(state.sig,'JPEG',m,y,180,50); y+=60; }catch(e){ line('(keine Signatur einbettbar)'); } } else line('(keine Signatur)');
-    items.forEach(it=>{
+    Elemente.fürJeden(it=>{
       const r=state.res[it.id]; if(!r||!r.photos||!r.photos.length)return;
       doc.addPage(); y=m; line('Fotos – '+it.title,true); y+=6;
       r.photos.forEach(p=>{ try{ const w=260,h=Math.round(w*0.62); if(y+h+lh>820){doc.addPage(); y=m;} doc.addImage(p,'JPEG',m,y,w,h); y+=h+8; }catch(_){ line('(Foto konnte nicht eingebettet werden)'); } });
     });
-    return doc.output('blob');
+    returniere doc.output('blob');
   }
 
-  function onPdf(){
-    try{
+  Funktion onPdf(){
+    versuchen{
       const blob=buildPdf();
       const url=URL.createObjectURL(blob);
       const a=document.createElement('a'); a.href=url; a.download='Fahrzeugkontrolle.pdf'; a.click();
       URL.revokeObjectURL(url); setStatus('PDF gespeichert ('+(blob.size/1024/1024).toFixed(2)+' MB)');
-    }catch(err){ alert('PDF-Fehler: '+err); }
+    }catch(err){ alarm('PDF-Fehler: '+err); }
   }
 
-  const blobToBase64 = blob => new Promise((res,rej)=>{ const r=new FileReader(); r.onload=()=>res(r.result.split(',')[1]); r.onerror=rej; r.readAsDataURL(blob); });
+  const blobToBase64 = blob => neues Promise((res,rej)=>{ const r=neuer FileReader(); r.onload=()=>res(r.result.split(',')[1]); r.onerror=rej; r.readAsDataURL(blob); });
 
-async function onMail() {
-  const problems = [];
+asynchrone Funktion onMail() {
+  const Probleme = [];
   const $id = (x) => document.getElementById(x);
 
   // ---- Pflichtprüfungen
   if (!$id('inDispo')?.value) problems.push('Dispo-E-Mail fehlt');
-  if (!$id('inOp')?.value || !$id('inTr')?.value || !$id('inTl')?.value)
-    problems.push('Fahrer/in und beide Kennzeichen sind Pflicht');
+  wenn (!$id('inOp')?.Wert || !$id('inTr')?.Wert || !$id('inTl')?.Wert)
+    problemes.push('Fahrer/in und beide Kennzeichen sind Pflicht');
 
-  const notRated = items
+  const notRated = Artikel
     .filter(it => !(state.res[it.id] && state.res[it.id].sev))
     .map(it => it.title);
-  if (notRated.length) problems.push('Nicht bewertet: ' + notRated.join(', '));
+  if (notRated.length) issues.push('Nicht bewertet: ' + notRated.join(', '));
 
   if (problems.length) {
-    alert('Versand blockiert:\n- ' + problems.join('\n- '));
-    return;
+    Alert('Versand blockiert:\n- ' + issues.join('\n- '));
+    zurückkehren;
   }
 
-  // ---- Helfer: Werte robust lesen (Input → Text → LocalStorage)
+  // ---- Helfer: Werte robust lesen (Eingabe → Text → LocalStorage)
   const fromLS = (k) => (localStorage.getItem(k) || '').trim();
   const val = (id, lsKey=null) => {
     const el = $id(id);
     const v = el ? (('value' in el ? el.value : el.textContent) || '').trim() : '';
-    if (v) return v;
+    wenn (v) gib v zurück;
     if (lsKey) {
       const w = fromLS(lsKey);
-      if (w) return w;
+      wenn (w) gib w zurück;
     }
-    return '';
+    zurückkehren '';
   };
 
-  try {
+  versuchen {
     setStatus('Erzeuge PDF …');
-    const pdfBlob  = buildPdf();
-    const base64   = await blobToBase64(pdfBlob);
+    const pdfBlob = buildPdf();
+    const base64 = warte auf blobToBase64(pdfBlob);
     const filename = `Fahrzeugkontrolle_${(val('inTr','tr')||'Zug')}_${(val('inTl','tl')||'Aufl')}.pdf`;
 
     // ---- Freigabe zuerst berechnen
     const anyBad = items.some(it => (state.res[it.id] && state.res[it.id].sev === 'Mangel'));
     const freigabeText = anyBad ? 'NICHT ERTEILT (Mangel vorhanden)' : 'ERTEILT';
 
-    // ---- Kopfzeilen (robust lesen)
-    const dt  = val('inDate', 'date');
-    const op  = val('inOp',   'op');
-    const tr  = val('inTr',   'tr');
-    const tl  = val('inTl',   'tl');
-    const loc = val('inLoc',  'loc');
+    // ---- Kopfzeilen (robustes Lesen)
+    const dt = val('inDate', 'date');
+    const op = val('inOp', 'op');
+    const tr = val('inTr', 'tr');
+    const tl = val('inTl', 'tl');
+    const loc = val('inLoc', 'loc');
 
-    const lines = [];
+    const Zeilen = [];
     lines.push(`Datum/Uhrzeit: ${dt || '-'}`);
     lines.push(`Fahrer/in: ${op || '-'}`);
     lines.push(`Zugmaschine: ${tr || '-'} | Auflieger/Modul: ${tl || '-'}`);
@@ -332,7 +332,7 @@ async function onMail() {
       return `• [${sev}] ${it.title}${note}`;
     }).join('\n');
 
-    // ---- Text & HTML
+    // ---- Text und HTML
     const subject = `Fahrzeugkontrolle ${tr || 'Zug'} / ${tl || 'Aufl'}`;
 
     const bodyText = `Fahrzeugkontrolle – Schwerlast/Zugmaschine
@@ -345,12 +345,12 @@ ${checkRows}
 
 (Details siehe PDF-Anhang)`;
 
-    const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+    const esc = s => String(s).replace(/&/g,'&').replace(/</g,'<lt;');
     const bodyHtml =
       `<div style="font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;font-size:14px;line-height:1.5">
          <h2 style="margin:0 0 8px 0">Fahrzeugkontrolle – Schwerlast/Zugmaschine</h2>
          <div>${lines.map(s => `<div>${esc(s)}</div>`).join('')}</div>
-         <div style="margin:10px 0 0 0"><strong>Freigabe: ${esc(freigabeText)}</strong></div>
+         <div style="margin:10px 0 0 0"><strong>Freigabe: ${esc(freigabeText)</strong></div>
          <div style="margin:10px 0 4px 0"><strong>Checkpunkte:</strong></div>
          <ul style="margin:0;padding-left:18px">
            ${items.map(it => {
@@ -358,130 +358,49 @@ ${checkRows}
              const sev = r.sev || '-';
              const note = (r.note && r.note.trim()) ? ' – ' + esc(r.note.trim()) : '';
              return `<li>[${esc(sev)}] ${esc(it.title)}${note}</li>`;
-           }).join('')}
+           }).verbinden('')}
          </ul>
          <div style="margin-top:10px">(Details siehe PDF-Anhang)</div>
        </div>`;
 
     // ---- Payload & Versand
-    const payload = {
-      to: $id('inDispo').value.trim(),
+    const Nutzlast = {
+      zu: $id('inDispo').value.trim(),
       cc: ($id('inCc')?.value || '').trim(),
-      subject,
-      text: bodyText,
+      Thema,
+      Text: Textkörper,
       html: bodyHtml,
-      filename,
+      Dateiname,
       pdfBase64: base64
     };
 
     setStatus('Sende über Relay …');
 
-    try {
-      await fetch(RELAY_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
+    versuchen {
+      warte auf Abruf (RELAY_URL, {
+        Methode: 'POST',
+        Header: { 'Inhaltstyp': 'application/json' },
+        Textkörper: JSON.stringify(Nutzlast)
       });
-    } catch (e) {
-      await fetch(RELAY_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
+    } fangen (e) {
+      warte auf Abruf (RELAY_URL, {
+        Methode: 'POST',
+        Modus: „keine Cors“,
+        Header: { 'Inhaltstyp': 'application/json' },
+        Textkörper: JSON.stringify(Nutzlast)
       });
     }
 
     setStatus('Bericht gesendet ✓');
-    alert('E-Mail mit PDF-Anhang wurde gesendet.');
+    Alert('E-Mail mit PDF-Anhang wurde gesendet.');
 
-  } catch (err) {
+  } fangen (Fehler) {
     setStatus('Senden fehlgeschlagen');
-    alert('Fehler beim Versand: ' + (err?.message || err));
+    Alert('Fehler beim Versand: ' + (err?.message || err));
   }
 }
 
 })();
-</script>
-<!-- ===== Mail-Minimal-Patch nur für TESTSEITE ===== -->
-<script>
-(function () {
-  const $id = (x) => document.getElementById(x);
-  const toBase64 = (blob) => new Promise((res, rej) => {
-    const r = new FileReader();
-    r.onload = () => res(String(r.result).split(',')[1]);
-    r.onerror = rej; r.readAsDataURL(blob);
-  });
-
-  // Diese Version ersetzt NUR onMail() – Rest der App bleibt unberührt
-  window.onMail = async function () {
-    try {
-      // 1) Werte VOR dem PDF-Bau lesen (robust)
-      const dt = ($id('inDate')?.value ?? '').trim();
-      const op = ($id('inOp')?.value ?? '').trim();
-
-      // Fallbacks (falls Browser-Autofill/Restore):
-      const fromLS = (k) => (localStorage.getItem(k) || '').trim();
-      const date = dt || fromLS('date') || '-';
-      const driver = op || fromLS('op') || '-';
-
-      // 2) Freigabe bestimmen (rein informativ)
-      const anyBad = (window.items || []).some(it => (window.state?.res?.[it.id]?.sev === 'Mangel'));
-      const freigabeText = anyBad ? 'NICHT ERTEILT (Mangel vorhanden)' : 'ERTEILT';
-
-      // 3) Minimaler Mail-Text (nur Datum+Fahrer) – PDF enthält den Rest
-      const subject = `Fahrzeugkontrolle – ${driver || 'Fahrer'} am ${date || 'Datum'}`;
-      const bodyText = `Fahrzeugkontrolle\nDatum/Uhrzeit: ${date}\nFahrer/in: ${driver}\nFreigabe: ${freigabeText}\n\nDetails siehe PDF-Anhang.`;
-      const bodyHtml = `<div style="font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;font-size:14px">
-        <h3 style="margin:0 0 6px 0">Fahrzeugkontrolle</h3>
-        <div>Datum/Uhrzeit: <b>${date}</b></div>
-        <div>Fahrer/in: <b>${driver}</b></div>
-        <div style="margin-top:6px">Freigabe: <b>${freigabeText}</b></div>
-        <div style="margin-top:10px">Details siehe PDF-Anhang.</div>
-      </div>`;
-
-      // 4) Jetzt PDF erzeugen
-      window.setStatus?.('Erzeuge PDF …');
-      const pdfBlob  = window.buildPdf();
-      const base64   = await toBase64(pdfBlob);
-      const filename = `Fahrzeugkontrolle_${driver || 'Fahrer'}_${date || 'Datum'}.pdf`;
-
-      // 5) Payload & Versand (dein Relay erwartet text/plain – behalten wir so!)
-      const payload = {
-        to: $id('inDispo')?.value.trim() || '',
-        cc: ($id('inCc')?.value || '').trim(),
-        subject,
-        text: bodyText,
-        html: bodyHtml,
-        filename,
-        pdfBase64: base64
-      };
-
-      if (!payload.to) { alert('Dispo-E-Mail fehlt'); return; }
-
-      window.setStatus?.('Sende über Relay …');
-      await fetch(window.RELAY_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'text/plain' },
-        body: JSON.stringify(payload)
-      }).catch(async () => {
-        await fetch(window.RELAY_URL, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'text/plain' },
-          body: JSON.stringify(payload)
-        });
-      });
-
-      window.setStatus?.('Bericht gesendet ✓');
-      alert('E-Mail mit PDF-Anhang wurde gesendet (TESTSEITE).');
-    } catch (err) {
-      window.setStatus?.('Senden fehlgeschlagen (TESTSEITE)');
-      alert('Fehler beim Versand (TESTSEITE): ' + (err?.message || err));
-    }
-  };
-})();
-</script>
-<!-- ===== Ende Mail-Minimal-Patch nur für TESTSEITE ===== -->
-  
+</Skript>
 </body>
 </html>
