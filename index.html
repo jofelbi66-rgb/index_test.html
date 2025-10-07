@@ -402,5 +402,86 @@ ${checkRows}
 
 })();
 </script>
+<!-- ===== Mail-Minimal-Patch nur für TESTSEITE ===== -->
+<script>
+(function () {
+  const $id = (x) => document.getElementById(x);
+  const toBase64 = (blob) => new Promise((res, rej) => {
+    const r = new FileReader();
+    r.onload = () => res(String(r.result).split(',')[1]);
+    r.onerror = rej; r.readAsDataURL(blob);
+  });
+
+  // Diese Version ersetzt NUR onMail() – Rest der App bleibt unberührt
+  window.onMail = async function () {
+    try {
+      // 1) Werte VOR dem PDF-Bau lesen (robust)
+      const dt = ($id('inDate')?.value ?? '').trim();
+      const op = ($id('inOp')?.value ?? '').trim();
+
+      // Fallbacks (falls Browser-Autofill/Restore):
+      const fromLS = (k) => (localStorage.getItem(k) || '').trim();
+      const date = dt || fromLS('date') || '-';
+      const driver = op || fromLS('op') || '-';
+
+      // 2) Freigabe bestimmen (rein informativ)
+      const anyBad = (window.items || []).some(it => (window.state?.res?.[it.id]?.sev === 'Mangel'));
+      const freigabeText = anyBad ? 'NICHT ERTEILT (Mangel vorhanden)' : 'ERTEILT';
+
+      // 3) Minimaler Mail-Text (nur Datum+Fahrer) – PDF enthält den Rest
+      const subject = `Fahrzeugkontrolle – ${driver || 'Fahrer'} am ${date || 'Datum'}`;
+      const bodyText = `Fahrzeugkontrolle\nDatum/Uhrzeit: ${date}\nFahrer/in: ${driver}\nFreigabe: ${freigabeText}\n\nDetails siehe PDF-Anhang.`;
+      const bodyHtml = `<div style="font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;font-size:14px">
+        <h3 style="margin:0 0 6px 0">Fahrzeugkontrolle</h3>
+        <div>Datum/Uhrzeit: <b>${date}</b></div>
+        <div>Fahrer/in: <b>${driver}</b></div>
+        <div style="margin-top:6px">Freigabe: <b>${freigabeText}</b></div>
+        <div style="margin-top:10px">Details siehe PDF-Anhang.</div>
+      </div>`;
+
+      // 4) Jetzt PDF erzeugen
+      window.setStatus?.('Erzeuge PDF …');
+      const pdfBlob  = window.buildPdf();
+      const base64   = await toBase64(pdfBlob);
+      const filename = `Fahrzeugkontrolle_${driver || 'Fahrer'}_${date || 'Datum'}.pdf`;
+
+      // 5) Payload & Versand (dein Relay erwartet text/plain – behalten wir so!)
+      const payload = {
+        to: $id('inDispo')?.value.trim() || '',
+        cc: ($id('inCc')?.value || '').trim(),
+        subject,
+        text: bodyText,
+        html: bodyHtml,
+        filename,
+        pdfBase64: base64
+      };
+
+      if (!payload.to) { alert('Dispo-E-Mail fehlt'); return; }
+
+      window.setStatus?.('Sende über Relay …');
+      await fetch(window.RELAY_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify(payload)
+      }).catch(async () => {
+        await fetch(window.RELAY_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain' },
+          body: JSON.stringify(payload)
+        });
+      });
+
+      window.setStatus?.('Bericht gesendet ✓');
+      alert('E-Mail mit PDF-Anhang wurde gesendet (TESTSEITE).');
+    } catch (err) {
+      window.setStatus?.('Senden fehlgeschlagen (TESTSEITE)');
+      alert('Fehler beim Versand (TESTSEITE): ' + (err?.message || err));
+    }
+  };
+})();
+</script>
+<!-- ===== Ende Mail-Minimal-Patch nur für TESTSEITE ===== -->
+  
 </body>
 </html>
